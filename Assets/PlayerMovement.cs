@@ -19,10 +19,10 @@ public class PlayerMovement : MonoBehaviour {
         playerRotation *= Time.deltaTime;
         if (Input.GetAxis("Horizontal") > 0)
         {
-            playerRotation -= 1f;
+            playerRotation += 1.5f;
         }else if (Input.GetAxis("Horizontal") < 0)
         {
-            playerRotation += 1f;
+            playerRotation -= 1.5f;
         }
 
 

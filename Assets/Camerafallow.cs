@@ -18,19 +18,11 @@ public class Camerafallow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            rotation -= 20f;
-        }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            rotation += 20f;
-        }
+        transform.LookAt(target);
 
-        rotation *= Time.deltaTime;
 
         Vector3 targetPosition = target.TransformPoint(new Vector3(0+xOffset, 5+yOffset, 0+zOffset));
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        transform.Rotate(0, rotation, 0);
+       
     }
 }

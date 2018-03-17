@@ -20,7 +20,7 @@ public class PlayerCastSpell : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform
+        //transform
 
         transform.Rotate(-90,Player.transform.rotation.y,0);
 

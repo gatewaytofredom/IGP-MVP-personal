@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class PlayerCastSpell : MonoBehaviour {
 
-    public Transform Cords;
-    public Transform casterDirection;
-    public float smoothTime = 0.001F;
-    private Vector3 velocity = Vector3.zero;
-    public Quaternion rotation = Quaternion.identity;
-    private GameObject Player;
+    private GameObject player;
+    private float deltaRotation;
+
 
     // Use this for initialization
     void Start () {
-        Player = GameObject.FindWithTag("Player");
-
+        player = GameObject.FindWithTag("Player");
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         //transform
+        deltaRotation = player.transform.rotation.x - transform.rotation.x;
+        transform.Rotate(0,deltaRotation,0);
+       // transform.position.Set(player.transform.position.x, player.transform.position.y, player.transform.position.z);
 
-        transform.Rotate(-90,Player.transform.rotation.y,0);
 
     }
 }
